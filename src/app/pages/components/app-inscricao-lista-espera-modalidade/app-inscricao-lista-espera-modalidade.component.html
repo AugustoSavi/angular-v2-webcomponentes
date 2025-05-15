@@ -1,0 +1,91 @@
+<div class="container">
+  <h3>Modalidades/níveis</h3>
+  <p>
+    Selecione as modalidades/níveis que você deseja se inscrever.
+  </p>
+
+  <div>
+    <div class="br-checkbox">
+      <input 
+        id="checkbox-1" 
+        name="checkbox-1" 
+        type="checkbox" 
+        aria-label="Selecionar todos"
+        (change)="onChangeCheckbox($event, true)" 
+        [(ngModel)]="checkedAll" />
+      <label for="checkbox-1">Selecionar todos</label>
+    </div>
+    <div class="ml-3 mt-3">
+      <div class="br-checkbox">
+        <input 
+          id="checkbox-2" 
+          name="checkbox-2" 
+          type="checkbox" 
+          aria-label="Educação Básica"
+          (change)="onChangeCheckbox($event, false)" 
+          [(ngModel)]="checkedEducacaoBasica" />
+        <label for="checkbox-2">Educação Básica</label>
+      </div>
+    </div>
+    <div class="ml-6" *ngIf="checkedEducacaoBasica">
+      <div class="row">
+        <br-select ngDefaultControl [(ngModel)]="selectedTechs" name="select-techs" label="Nível"
+          [options]="multiSelectOptions" select-all-label="Selecionar todas" unselect-all-label="Remover todas"
+          is-multiple show-search-icon placeholder="Selecione níveis">
+        </br-select>
+        <br-select class="ml-3" ngDefaultControl [(ngModel)]="selectedEtapas" name="select-etapas" label="Etapa"
+          [options]="multiSelectOptionsEtapa" select-all-label="Selecionar todas" unselect-all-label="Remover todas"
+          is-multiple show-search-icon placeholder="Selecione etapas">
+        </br-select>
+      </div>
+    </div>
+    <div class="ml-3 mt-3">
+      <div class="br-checkbox">
+        <input 
+          id="checkbox-3" 
+          name="checkbox-3" 
+          type="checkbox" 
+          aria-label="Aceleração"
+          (change)="onChangeCheckbox($event, false)" 
+          [(ngModel)]="checkedAceleracao" />
+        <label for="checkbox-3">Aceleração</label>
+      </div>
+    </div>
+    <div class="ml-6" *ngIf="checkedAceleracao">
+      <div class="row">
+        <br-select ngDefaultControl [(ngModel)]="selectedTechs" name="select-techs" label="Nível"
+          [options]="multiSelectOptions" select-all-label="Selecionar todas" unselect-all-label="Remover todas"
+          is-multiple show-search-icon placeholder="Selecione níveis">
+        </br-select>
+        <br-select class="ml-3" ngDefaultControl [(ngModel)]="selectedEtapas" name="select-etapas" label="Etapa"
+          [options]="multiSelectOptionsEtapa" select-all-label="Selecionar todas" unselect-all-label="Remover todas"
+          is-multiple show-search-icon placeholder="Selecione etapas">
+        </br-select>
+      </div>
+    </div>
+    <div class="ml-3 mt-3">
+      <div class="br-checkbox">
+        <input 
+          id="checkbox-4" 
+          name="checkbox-4" 
+          type="checkbox" 
+          aria-label="EJA"
+          (change)="onChangeCheckbox($event, false)" 
+          [(ngModel)]="checkedEja" />
+        <label for="checkbox-4">EJA</label>
+      </div>
+    </div>
+    <div class="ml-6" *ngIf="checkedEja">
+      <div class="row">
+        <br-select ngDefaultControl [(ngModel)]="selectedTechs" name="select-techs" label="Nível"
+          [options]="multiSelectOptions" select-all-label="Selecionar todas" unselect-all-label="Remover todas"
+          is-multiple show-search-icon placeholder="Selecione níveis">
+        </br-select>
+        <br-select class="ml-3" ngDefaultControl [(ngModel)]="selectedEtapas" name="select-etapas" label="Etapa"
+          [options]="multiSelectOptionsEtapa" select-all-label="Selecionar todas" unselect-all-label="Remover todas"
+          is-multiple show-search-icon placeholder="Selecione etapas">
+        </br-select>
+      </div>
+    </div>
+  </div>
+</div>

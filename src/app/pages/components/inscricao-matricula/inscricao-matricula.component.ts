@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 import { CommonModule } from '@angular/common';
 import { AppInscricaoListaEsperaNomeComponent } from '../app-inscricao-lista-espera-nome/app-inscricao-lista-espera-nome.component';
-import { BrBreadcrumb, BrCollapse, BrDivider, BrIcon, BrItem, BrList, BrMessage } from '@govbr-ds/webcomponents-angular/standalone';
+import { BrBreadcrumb, BrCollapse, BrDivider, BrIcon, BrItem, BrList } from '@govbr-ds/webcomponents-angular/standalone';
+import { AppInscricaoListaEsperaModalidadeComponent } from '../app-inscricao-lista-espera-modalidade/app-inscricao-lista-espera-modalidade.component';
 
 interface Crumb {
   label: string;
@@ -14,7 +15,18 @@ interface Crumb {
 @Component({
   selector: 'app-inscricao-matricula',
   standalone: true,
-  imports: [CommonModule, StepComponent, AppInscricaoListaEsperaNomeComponent, BrMessage, BrBreadcrumb, BrDivider, BrList, BrCollapse, BrItem, BrIcon],
+  imports: [
+    CommonModule,
+    StepComponent,
+    AppInscricaoListaEsperaNomeComponent,  
+    BrBreadcrumb, 
+    BrDivider, 
+    BrList, 
+    BrCollapse, 
+    BrItem, 
+    BrIcon,
+    AppInscricaoListaEsperaModalidadeComponent
+  ],
   templateUrl: './inscricao-matricula.component.html',
   styleUrl: './inscricao-matricula.component.scss'
 })

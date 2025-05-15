@@ -5,9 +5,11 @@ declare global {
   interface Window {
     core: {
       BRDateTimePicker: new (selector: string, element: Element, options: { minDate: string; maxDate: string }) => void;
+      BRCheckbox: new (selector: string, element: Element) => void;
     };
   }
 }
+
 import { FormsModule } from '@angular/forms';
 import { BrMessage } from '@govbr-ds/webcomponents-angular/standalone';
 
@@ -20,6 +22,8 @@ import { BrMessage } from '@govbr-ds/webcomponents-angular/standalone';
 })
 export class AppInscricaoListaEsperaNomeComponent implements AfterViewInit {
   nome: string = '';
+  dataNascimento: string = '';
+  
   ngAfterViewInit(): void {
     const datetimepickerElements = document.querySelectorAll('.br-datetimepicker');
     datetimepickerElements.forEach((element) => {

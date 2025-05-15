@@ -1,0 +1,12 @@
+<div class="br-checkbox">
+  <input
+    #checkboxInput
+    [id]="id"
+    [name]="id"
+    type="checkbox"
+    [checked]="value"
+    (change)="toggleChecked($event)"
+    [attr.aria-label]="label"
+  />
+  <label [for]="id">{{ label }}</label>
+</div>

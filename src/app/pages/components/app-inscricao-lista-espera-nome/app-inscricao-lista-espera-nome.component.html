@@ -22,7 +22,7 @@
           />
           <div class="mb-3" *ngIf="nomeModel.invalid && (nomeModel.dirty || nomeModel.touched)">
             <br-message
-              state="warning"
+              state="danger"
               is-feedback
               message="Não foi informado nome do candidato no campo."
               show-icon
@@ -35,11 +35,28 @@
       <div class="br-datetimepicker col-sm-4 col-lg-4" data-mode="single" data-type="text">
         <div class="br-input has-icon">
           <label for="simples-input">Data de nascimento</label>
-          <input id="simples-input" type="text" placeholder="exemplo: 02/02/2024" data-input="data-input"/>
+          <input 
+            id="simples-input" 
+            type="text"
+            required
+            placeholder="exemplo: 02/02/2024" 
+            data-input="data-input"
+            [(ngModel)]="dataNascimento"
+            #dataNascimentoModel="ngModel"
+            />
           <button class="br-button circle small" type="button" aria-label="Abrir Timepicker" data-toggle="data-toggle" id="simples-input-btn" tabindex="-1" aria-hidden="true">
             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
           </button>
         </div>
+        <div class="mb-3" *ngIf="dataNascimentoModel.invalid && (dataNascimentoModel.dirty || dataNascimentoModel.touched)">
+          <br-message
+            state="danger"
+            is-feedback
+            message="Não foi informado data de nascimento do candidato no campo."
+            show-icon
+            aria-label="Aviso: Não foi informado data de nascimento do candidato no campo"
+          ></br-message>
+          </div>
       </div>
     </div>
   </div>

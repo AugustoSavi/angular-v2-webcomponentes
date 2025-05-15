@@ -68,7 +68,9 @@
       <div *ngIf="selectedStep === 0" id="0">
         <app-app-inscricao-lista-espera-nome />
       </div>
-      <p *ngIf="selectedStep === 1" id="1">{{ selectedStep}}</p>
+      <p *ngIf="selectedStep === 1" id="1">
+        <app-app-inscricao-lista-espera-modalidade />
+      </p>
       <p *ngIf="selectedStep === 2" id="2">{{ selectedStep}}</p>
       <p *ngIf="selectedStep === 3" id="3">{{ selectedStep}}</p>
       <p *ngIf="selectedStep === 4" id="4">{{ selectedStep}}</p>

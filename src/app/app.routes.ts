@@ -187,6 +187,13 @@ export const routes: Routes = [
         (m) => m.InscricaoMatriculaComponent
       ),
   },
+  {
+    path: 'beth',
+    loadComponent: () =>
+      import('./pages/components/beth/beth.component').then(
+        (m) => m.BethComponent
+      ),
+  },
 
   // Outras rotas
   {

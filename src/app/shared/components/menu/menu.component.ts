@@ -199,6 +199,12 @@ export class MenuComponent {
       icon: 'fas fa-child',
       url: '/inscricao',
     },
+    {
+      id: 'beth',
+      name: 'Beth',
+      icon: 'fas fa-robot',
+      url: '/beth',
+    },
   ];
 
   project = {
