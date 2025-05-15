@@ -1,22 +1,19 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-step',
-  standalone: true,
+  imports: [CommonModule],
   templateUrl: './step.component.html',
-  styleUrl: './step.component.scss'
+  styleUrls: ['./step.component.scss'],
 })
-export class StepComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    const core = (window as any).core;
-    if (core?.BRStep) {
-      const stepList = [];
-      for (const brStep of Array.from(document.querySelectorAll('.br-step'))) {
-        stepList.push(new core.BRStep('br-step', brStep));
-      }
-      console.log('Passos BRStep inicializados:', stepList);
-    } else {
-      console.error('core.BRStep não disponível. Verifique se o script core-init.js foi carregado corretamente.');
-    }
+export class StepComponent {
+  @Input() steps: string[] = [];
+  @Input() selectedIndex = 0; // passo ativo vindo do pai
+
+  @Output() stepChange = new EventEmitter<number>(); // evento para avisar mudança
+
+  onStepClick(i: number) {
+    this.stepChange.emit(i);
   }
 }

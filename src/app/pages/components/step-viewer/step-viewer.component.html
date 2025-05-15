@@ -1,0 +1,17 @@
+Olá
+
+
+<app-step
+  [steps]="steps"
+  [selectedIndex]="selectedStep"
+  (stepChange)="onStepChange($event)"
+></app-step>
+
+<!-- Renderiza um card diferente conforme o step selecionado -->
+<div style="margin-top: 20px;">
+  <p *ngIf="selectedStep === 0" id="0">{{ selectedStep}}</p>
+  <p *ngIf="selectedStep === 1" id="1">{{ selectedStep}}</p>
+  <p *ngIf="selectedStep === 2" id="2">{{ selectedStep}}</p>
+  <p *ngIf="selectedStep === 3" id="3">{{ selectedStep}}</p>
+  <p *ngIf="selectedStep === 4" id="4">{{ selectedStep}}</p>
+</div>

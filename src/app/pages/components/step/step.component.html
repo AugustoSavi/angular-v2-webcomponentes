@@ -1,17 +1,17 @@
-<div>
-  <nav class="br-step" data-initial="1" data-label="bottom" role="none">
-    <div class="step-progress" role="listbox" aria-orientation="horizontal"
-      aria-label="Lista de Opções">
-      <button class="step-progress-btn" role="option" aria-posinset="1" aria-setsize="3"
-        type="button"><span class="step-info">Nome</span></button>
-      <button class="step-progress-btn" role="option" aria-posinset="2" aria-setsize="3"
-        type="button"><span class="step-info">Nível/Modalidade</span></button>
-      <button class="step-progress-btn" role="option" aria-posinset="3" aria-setsize="3"
-        type="button"><span class="step-info">Formulário</span></button>
-      <button class="step-progress-btn" role="option" aria-posinset="4" aria-setsize="3"
-        type="button"><span class="step-info">Confirmação</span></button>
-      <button class="step-progress-btn" role="option" aria-posinset="5" aria-setsize="3"
-        type="button"><span class="step-info">Comprovante</span></button>
-    </div>
-  </nav>
-</div>
+<nav class="br-step" data-initial="1" data-label="bottom" role="none">
+  <div class="step-progress" role="listbox" aria-orientation="horizontal" aria-label="Lista de Opções">
+    <button
+      *ngFor="let step of steps; let i = index"
+      class="step-progress-btn"
+      [class.active]="selectedIndex === i"
+      role="option"
+      [attr.aria-posinset]="i + 1"
+      [attr.aria-setsize]="steps.length"
+      [attr.step-num]="i + 1"
+      type="button"
+      (click)="onStepClick(i)"
+    >
+      <span class="step-info">{{ step }}</span>
+    </button>
+  </div>
+</nav>

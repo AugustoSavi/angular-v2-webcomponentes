@@ -176,8 +176,8 @@ export const routes: Routes = [
   {
     path: 'step',
     loadComponent: () =>
-      import('./pages/components/step/step.component').then(
-        (m) => m.StepComponent
+      import('./pages/components/step-viewer/step-viewer.component').then(
+        (m) => m.StepViewerComponent
       ),
   },
 
