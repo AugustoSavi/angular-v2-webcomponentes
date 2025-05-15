@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrCheckbox, BrSelect } from '@govbr-ds/webcomponents-angular/standalone';
-import { CheckboxWorkingComponent } from '../checkbox-working/checkbox-working.component';
+import { BrSelect } from '@govbr-ds/webcomponents-angular/standalone';
 
 @Component({
   selector: 'app-app-inscricao-lista-espera-modalidade',
-  imports: [CommonModule, FormsModule, BrCheckbox, BrSelect, CheckboxWorkingComponent],
+  imports: [CommonModule, FormsModule, BrSelect],
   templateUrl: './app-inscricao-lista-espera-modalidade.component.html',
   styleUrl: './app-inscricao-lista-espera-modalidade.component.scss'
 })

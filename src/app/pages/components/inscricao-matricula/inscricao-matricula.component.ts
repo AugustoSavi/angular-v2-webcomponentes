@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AppInscricaoListaEsperaNomeComponent } from '../app-inscricao-lista-espera-nome/app-inscricao-lista-espera-nome.component';
 import { BrBreadcrumb, BrCollapse, BrDivider, BrIcon, BrItem, BrList } from '@govbr-ds/webcomponents-angular/standalone';
 import { AppInscricaoListaEsperaModalidadeComponent } from '../app-inscricao-lista-espera-modalidade/app-inscricao-lista-espera-modalidade.component';
+import { AppInscricaoListaEsperaEscolasComponent } from '../app-inscricao-lista-espera-escolas/app-inscricao-lista-espera-escolas.component';
 
 interface Crumb {
   label: string;
@@ -25,7 +26,8 @@ interface Crumb {
     BrCollapse, 
     BrItem, 
     BrIcon,
-    AppInscricaoListaEsperaModalidadeComponent
+    AppInscricaoListaEsperaModalidadeComponent,
+    AppInscricaoListaEsperaEscolasComponent
   ],
   templateUrl: './inscricao-matricula.component.html',
   styleUrl: './inscricao-matricula.component.scss'
