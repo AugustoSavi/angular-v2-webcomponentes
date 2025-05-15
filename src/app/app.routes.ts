@@ -166,6 +166,13 @@ export const routes: Routes = [
         (m) => m.UploadComponent
       ),
   },
+  {
+    path: 'date-picker',
+    loadComponent: () =>
+      import('./pages/components/date-picker/date-picker.component').then(
+        (m) => m.DatePickerComponent
+      ),
+  },
 
   // Outras rotas
   {

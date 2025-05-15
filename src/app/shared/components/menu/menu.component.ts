@@ -173,6 +173,12 @@ export class MenuComponent {
           icon: 'fas fa-upload',
           url: '/upload',
         },
+        {
+          id: '1-21',
+          name: 'Date Picker',
+          icon: 'fa fa-calendar',
+          url: '/date-picker',
+        },
       ],
     },
     {

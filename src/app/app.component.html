@@ -19,11 +19,13 @@
     </a>
   </nav>
 
-  <app-header [menuVisible]="isMenuVisible" (menuToggle)="toggleMenu()">
-  </app-header>
+  <app-header
+    [menuVisible]="isMenuVisible"
+    (toggleMenu)="toggleMenu()"
+  ></app-header>
 
   <section class="d-flex flex-fill mb-5" id="main">
-    <div class="container-fluid d-flex">
+    <div class="container-fluid">
       <div class="row">
         <aside
           class="br-menu push active"

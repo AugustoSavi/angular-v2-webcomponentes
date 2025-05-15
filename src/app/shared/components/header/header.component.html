@@ -3,7 +3,7 @@
     <div class="header-top">
       <div class="header-logo">
         <img
-          src="https://www.serpro.gov.br/++resource++serpro.portalserprotema/capa/++resource++serpro.portalserprotema/img/capa/marca-serpro.png"
+          src="../../../../assets/logo_mobile.png"
           alt="logo"
         /><span class="br-divider vertical"></span>
         <div class="header-sign">
@@ -14,16 +14,13 @@
     <div class="header-bottom">
       <div class="header-menu">
         <div class="header-menu-trigger" id="header-navigation">
-          <button
-            class="br-button small circle"
-            type="button"
-            aria-label="Menu"
-            data-toggle="menu"
-            data-target="#main-navigation"
-            id="navigation"
-          >
-            <i class="fas fa-bars" aria-hidden="true"></i>
-          </button>
+        <button
+          class="br-button small circle"
+          type="button"
+          (click)="onMenuClick()"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
         </div>
         <div class="header-info">
           <div class="header-title">Template básico</div>
