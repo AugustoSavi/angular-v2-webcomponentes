@@ -1,0 +1,46 @@
+<div>
+  <h3>Preencha os dados iniciais do candidato</h3>
+
+  <div class="col-sm-12 col-lg-12 mb-3">
+    <div class="row">
+      <div class="br-input col-sm-8 col-lg-8">
+        <label for="nome">Nome da criança / candidato(a)</label>
+        <div class="input-group">
+          <div class="input-icon">
+            <i class="fas fa-user" aria-hidden="true"></i>
+          </div>
+          <input 
+            id="nome"
+            name="nome"
+            class="small"
+            type="text"
+            placeholder="Nome completo"
+            required
+            [(ngModel)]="nome"
+            #nomeModel="ngModel"
+            aria-describedby="nome-error"
+          />
+          <div class="mb-3" *ngIf="nomeModel.invalid && (nomeModel.dirty || nomeModel.touched)">
+            <br-message
+              state="warning"
+              is-feedback
+              message="Não foi informado nome do candidato no campo."
+              show-icon
+              aria-label="Aviso: Não foi informado nome do candidato no campo"
+            ></br-message>
+          </div>
+        </div>
+      </div>
+
+      <div class="br-datetimepicker col-sm-4 col-lg-4" data-mode="single" data-type="text">
+        <div class="br-input has-icon">
+          <label for="simples-input">Data de nascimento</label>
+          <input id="simples-input" type="text" placeholder="exemplo: 02/02/2024" data-input="data-input"/>
+          <button class="br-button circle small" type="button" aria-label="Abrir Timepicker" data-toggle="data-toggle" id="simples-input-btn" tabindex="-1" aria-hidden="true">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

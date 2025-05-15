@@ -193,6 +193,12 @@ export class MenuComponent {
       icon: 'fas fa-palette',
       url: '/cores',
     },
+    {
+      id: 'inscricao',
+      name: 'Inscrição',
+      icon: 'fas fa-child',
+      url: '/inscricao',
+    },
   ];
 
   project = {

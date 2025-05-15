@@ -1,0 +1,28 @@
+<app-step
+  [steps]="steps"
+  [selectedIndex]="selectedStep"
+  (stepChange)="onStepChange($event)"
+></app-step>
+
+<!-- Renderiza um card diferente conforme o step selecionado -->
+<div style="margin-top: 20px;">
+  <div class="container" *ngIf="selectedStep === 0" id="0">
+    <app-app-inscricao-lista-espera-nome />
+  </div>
+  <p *ngIf="selectedStep === 1" id="1">{{ selectedStep}}</p>
+  <p *ngIf="selectedStep === 2" id="2">{{ selectedStep}}</p>
+  <p *ngIf="selectedStep === 3" id="3">{{ selectedStep}}</p>
+  <p *ngIf="selectedStep === 4" id="4">{{ selectedStep}}</p>
+</div>
+
+<!-- button full right -->
+<div class="d-flex container justify-content-end" style="margin-top: 100px;">
+  <button
+    type="button"
+    class="br-button primary mr-3"
+
+    [disabled]="selectedStep === steps.length - 1"
+  >
+    Próximo
+  </button>
+</div>

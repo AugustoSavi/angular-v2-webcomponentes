@@ -180,6 +180,13 @@ export const routes: Routes = [
         (m) => m.StepViewerComponent
       ),
   },
+  {
+    path: 'inscricao',
+    loadComponent: () =>
+      import('./pages/components/inscricao-matricula/inscricao-matricula.component').then(
+        (m) => m.InscricaoMatriculaComponent
+      ),
+  },
 
   // Outras rotas
   {
