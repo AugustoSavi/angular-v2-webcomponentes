@@ -179,6 +179,12 @@ export class MenuComponent {
           icon: 'fa fa-calendar',
           url: '/date-picker',
         },
+        {
+          id: '1-21',
+          name: 'Step',
+          icon: 'fa fa-arrow-right',
+          url: '/step',
+        },
       ],
     },
     {

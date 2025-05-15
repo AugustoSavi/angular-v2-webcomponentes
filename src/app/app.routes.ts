@@ -173,6 +173,13 @@ export const routes: Routes = [
         (m) => m.DatePickerComponent
       ),
   },
+  {
+    path: 'step',
+    loadComponent: () =>
+      import('./pages/components/step/step.component').then(
+        (m) => m.StepComponent
+      ),
+  },
 
   // Outras rotas
   {

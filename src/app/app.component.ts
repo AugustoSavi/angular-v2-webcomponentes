@@ -19,6 +19,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title = 'meu-projeto-standalone';
   isMenuVisible = true;
 
   toggleMenu() {
