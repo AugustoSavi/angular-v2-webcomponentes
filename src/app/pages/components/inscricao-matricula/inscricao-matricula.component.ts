@@ -39,8 +39,8 @@ export class InscricaoMatriculaComponent {
     { label: 'Inscrição lista de espera 2025', active: true },
   ];
 
-    
-  steps = ['Nome', 'Nível/Modalidade', 'Formulário', 'Confirmação', 'Comprovante'];
+
+  steps = ['Nome', 'Nível/Modalidade', 'Escolas', 'Formulário', 'Confirmação', 'Comprovante'];
   selectedStep = 0;
 
   onStepChange(index: number) {
@@ -50,6 +50,12 @@ export class InscricaoMatriculaComponent {
   nextStep() {
     if (this.selectedStep < this.steps.length - 1) {
       this.selectedStep++;
+    }
+  }
+
+  backStep() {
+    if (this.selectedStep > 0) {
+      this.selectedStep--;
     }
   }
 
