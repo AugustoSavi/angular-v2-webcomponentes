@@ -1,28 +1,84 @@
-<app-step
-  [steps]="steps"
-  [selectedIndex]="selectedStep"
-  (stepChange)="onStepChange($event)"
-></app-step>
+<div class="container">
 
-<!-- Renderiza um card diferente conforme o step selecionado -->
-<div style="margin-top: 20px;">
-  <div class="container" *ngIf="selectedStep === 0" id="0">
-    <app-app-inscricao-lista-espera-nome />
+  <div>
+    <br-breadcrumb [crumbs]="links" home-url="/dashboard" />
   </div>
-  <p *ngIf="selectedStep === 1" id="1">{{ selectedStep}}</p>
-  <p *ngIf="selectedStep === 2" id="2">{{ selectedStep}}</p>
-  <p *ngIf="selectedStep === 3" id="3">{{ selectedStep}}</p>
-  <p *ngIf="selectedStep === 4" id="4">{{ selectedStep}}</p>
-</div>
 
-<!-- button full right -->
-<div class="d-flex container justify-content-end" style="margin-top: 100px;">
-  <button
-    type="button"
-    class="br-button primary mr-3"
+  <br-divider></br-divider>
 
-    [disabled]="selectedStep === steps.length - 1"
-  >
-    Próximo
-  </button>
+  <div *ngIf="!isInscricaoAtiva">
+    <div class="row">
+      <div class="col-sm-6 col-lg-8">
+        <h1>Inscrição lista de espera 2025</h1>
+      </div>
+
+      <div class="col-sm-4 col-lg-4 d-flex justify-content-end">
+        <div class="br-magic-button large">
+          <button 
+            class="br-button" 
+            type="button"
+            (click)="iniciarInscricao()"
+            >Iniciar</button>
+        </div>
+      </div>
+    </div>
+
+    <br-divider></br-divider>
+    <p>Ultima modificação 05/12/2024</p>
+    <br-divider></br-divider>
+
+    <div class="d-flex flex-wrap mt-3">
+      <br-list>
+        <br-collapse icon-position="left">
+          <h5 slot="trigger">O que é?</h5>
+          <br-item>
+            <br-icon slot="start" icon-name="fa6-solid:heart-pulse" />
+            Sub-item
+            <span slot="end">META</span>
+          </br-item>
+          <br-item>
+            <br-icon slot="start" icon-name="fa6-solid:heart-pulse" />
+            Sub-item
+            <span slot="end">META</span>
+          </br-item>
+        </br-collapse>
+
+        <br-collapse icon-position="left">
+          <h5 slot="trigger">Legislação</h5>
+          <br-item>
+            <br-icon slot="start" icon-name="fa6-solid:heart-pulse" />
+            Sub-item
+            <span slot="end">META</span>
+          </br-item>
+          <br-item>
+            <br-icon slot="start" icon-name="fa6-solid:heart-pulse" />
+            Sub-item
+            <span slot="end">META</span>
+          </br-item>
+        </br-collapse>
+      </br-list>
+    </div>
+
+  </div>
+
+  <div *ngIf="isInscricaoAtiva">
+    <app-step [steps]="steps" [selectedIndex]="selectedStep" (stepChange)="onStepChange($event)"></app-step>
+
+    <div style="margin-top: 20px;">
+      <div *ngIf="selectedStep === 0" id="0">
+        <app-app-inscricao-lista-espera-nome />
+      </div>
+      <p *ngIf="selectedStep === 1" id="1">{{ selectedStep}}</p>
+      <p *ngIf="selectedStep === 2" id="2">{{ selectedStep}}</p>
+      <p *ngIf="selectedStep === 3" id="3">{{ selectedStep}}</p>
+      <p *ngIf="selectedStep === 4" id="4">{{ selectedStep}}</p>
+    </div>
+
+    <div class="d-flex container justify-content-end" style="margin-top: 100px;">
+      <button type="button" class="br-button primary mr-3" (click)="nextStep()"
+        [disabled]="selectedStep === steps.length - 1">
+        Próximo
+      </button>
+    </div>
+  </div>
 </div>
