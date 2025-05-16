@@ -1,0 +1,13 @@
+<!-- Scrim e Modal -->
+<div class="br-scrim-util foco" [class.active]="isOpen" data-scrim="true" (click)="closeModal($event)">
+  <div class="br-modal" role="dialog" aria-labelledby="modalTitle" (click)="$event.stopPropagation()">
+    <div class="br-modal-header" id="modalTitle">{{ title }}</div>
+    <div class="br-modal-body">
+      <ng-content></ng-content>
+    </div>
+    <div class="br-modal-footer justify-content-center">
+      <button class="br-button secondary" type="button" (click)="close()">Cancelar</button>
+      <button class="br-button primary mt-3 mt-sm-0 ml-sm-3" type="button" (click)="confirm()">Aceitar</button>
+    </div>
+  </div>
+</div>

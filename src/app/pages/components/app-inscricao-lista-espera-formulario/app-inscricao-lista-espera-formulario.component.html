@@ -15,6 +15,7 @@
         ngDefaultControl
         name="filiacao" 
         label="Filiações"
+        (click)="openModal()"
         placeholder="informe os dados dos responsáveis" density="medium">
       </br-input>
     </div>
@@ -94,3 +95,27 @@
     </div>
   </div>
 </div>
+
+<app-modal 
+  [isOpen]="modalOpen" 
+  [title]="'Utilizar dados disponíveis'"
+  (closed)="modalOpen = false"
+  (confirmed)="onModalConfirm()"
+>
+  <p>O campo <strong>Responsáveis</strong> pode ser alimentado com dados presentes na carteira de documentos.</p>
+
+  <br-message
+      message-title="Informação."
+      is-inline
+      auto-remove
+      show-icon
+      aria-label="Informação adicional"
+    >
+      <span>
+        Dados que serão utilizados:
+        <br />
+        Nome, Cpf, RG, Data de nascimento, Nome da mãe, Nome do pai, Telefone, Endereço
+      </span>
+    </br-message>
+  <p>Você deseja utilizar esses dados?</p>
+</app-modal>
