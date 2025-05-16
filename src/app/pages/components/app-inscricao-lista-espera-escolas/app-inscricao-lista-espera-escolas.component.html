@@ -32,6 +32,7 @@
         </div>
 
         <br-button
+            [disabled]="arrayEscolas.length === 1"
             ngDefaultControl
             class="p-1"
             emphasis="secondary"
@@ -92,11 +93,26 @@
     <div class="col-sm-12 col-lg-12 mb-3">
       <div class="row">
         <div class="col-sm-6 col-lg-6">
-          <br-select class="ml-3" ngDefaultControl [(ngModel)]="selectedEscolas" name="select-etapas" label="Escola(s)"
-            [options]="multiSelectOptionsEscolas" select-all-label="Selecionar todas" unselect-all-label="Remover todas"
-            is-multiple show-search-icon placeholder="Selecione escolas">
+          <br-select 
+            class="ml-3" 
+            ngDefaultControl 
+            [(ngModel)]="selectedEscolas" 
+            name="select-etapas" 
+            [options]="multiSelectOptionsEscolas"
+            show-search-icon placeholder="Selecione uma escola">
           </br-select>
         </div>
+
+        <br-button
+            ngDefaultControl
+            class="p-1"
+            emphasis="secondary"
+            density="medium"
+            shape="circle"
+            aria-label="Excluir"
+          >
+            <br-icon icon-name="fa6-solid:trash" />
+          </br-button>
       </div>
       <div class="d-flex mt-3 ml-3">
         <div class="br-checkbox mt-2">
