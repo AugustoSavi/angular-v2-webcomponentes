@@ -5,6 +5,7 @@ import { AppInscricaoListaEsperaNomeComponent } from '../app-inscricao-lista-esp
 import { BrBreadcrumb, BrCollapse, BrDivider, BrIcon, BrItem, BrList } from '@govbr-ds/webcomponents-angular/standalone';
 import { AppInscricaoListaEsperaModalidadeComponent } from '../app-inscricao-lista-espera-modalidade/app-inscricao-lista-espera-modalidade.component';
 import { AppInscricaoListaEsperaEscolasComponent } from '../app-inscricao-lista-espera-escolas/app-inscricao-lista-espera-escolas.component';
+import { AppInscricaoListaEsperaFormularioComponent } from '../app-inscricao-lista-espera-formulario/app-inscricao-lista-espera-formulario.component';
 
 interface Crumb {
   label: string;
@@ -27,7 +28,8 @@ interface Crumb {
     BrItem, 
     BrIcon,
     AppInscricaoListaEsperaModalidadeComponent,
-    AppInscricaoListaEsperaEscolasComponent
+    AppInscricaoListaEsperaEscolasComponent,
+    AppInscricaoListaEsperaFormularioComponent
   ],
   templateUrl: './inscricao-matricula.component.html',
   styleUrl: './inscricao-matricula.component.scss'

@@ -1,0 +1,96 @@
+<div class="container">
+  <h3>Dados pessoas</h3>
+  <div>
+    <div class="row">
+      <br-select
+        class="col-sm-4 col-lg-4"
+        ngDefaultControl
+        label="Sexo"
+        placeholder="Selecione uma opção"
+        [options]="[{ label: 'Opção 1', value: 'opcao1' }, { label: 'Opção 2', value: 'opcao2' }]"
+      ></br-select>
+
+      <br-input 
+        class="col-sm-8 col-lg-8"
+        ngDefaultControl
+        name="filiacao" 
+        label="Filiações"
+        placeholder="informe os dados dos responsáveis" density="medium">
+      </br-input>
+    </div>
+
+    <h3>Dados físicos/Médicos</h3>
+
+    <br-select
+      ngDefaultControl
+      label="Possui alguma deficiência"
+      placeholder="Selecione uma opção"
+      [options]="[{ label: 'Opção 1', value: 'opcao1' }, { label: 'Opção 2', value: 'opcao2' }]"
+    ></br-select>
+
+    <h3>Dados de contato</h3>
+    <div class="row">
+      <br-input
+        class="col-sm-4 col-lg-4"
+        ngDefaultControl
+        required
+        [(ngModel)]="user.contato" 
+        name="contato"
+        label="Nome do contato"
+        placeholder="Digite uma nome" 
+        density="medium">
+      </br-input>
+
+      <br-input
+        class="col-sm-4 col-lg-4"
+        ngDefaultControl
+        required
+        [(ngModel)]="user.numero" 
+        name="numero"
+        label="contato" 
+        placeholder="digite um numero de telefone" 
+        density="medium">
+      </br-input>
+    </div>
+    <div class="d-flex mt-3">
+      <br-button ngDefaultControl emphasis="secondary" type="reset" class="mr-2" (click)="resetForm()">
+        Limpar
+      </br-button>
+      <br-button ngDefaultControl emphasis="primary" type="button" (click)="submitForm()">
+        Cadastrar
+      </br-button>
+    </div>
+
+    <!-- Mensagem de sucesso + Tabela de cadastros -->
+    <div *ngIf="submissions.length" class="mt-4">
+      <br-message ngDefaultControl state="success" message="Contato cadastrado com sucesso!" show-icon
+        class="mb-2"></br-message>
+
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="p-2 border">Nome</th>
+            <th class="p-2 border">Contato</th>
+            <!-- <th class="p-2 border">Senha Confere?</th> -->
+            <th class="p-2 border">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of submissions; let i = index" class="hover:bg-gray-50">
+            <td class="p-2 border">{{ u.contato }}</td>
+            <td class="p-2 border">{{ u.numero }}</td>
+            <!-- <td class="p-2 border">
+              {{ u.password === u.confirmPassword ? "OK" : "Não confere" }}
+            </td> -->
+            <td class="p-2 border">
+              <br-button ngDefaultControl class="p-1" emphasis="secondary" density="medium" shape="circle"
+                aria-label="Excluir" (click)="deleteSubmission(i)">
+                <br-icon icon-name="fa6-solid:trash" />
+              </br-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -9,8 +9,26 @@
   <div *ngIf="!isInscricaoAtiva">
     <div class="row">
       <div class="col-sm-6 col-lg-8">
-        <h1>Inscrição lista de espera 2025</h1>
+        <h1 class="titulo">Inscrição lista de espera 2025</h1>
+        <div class="row align-items-center">    
+          <div class="col-auto">
+            <span class="nota fs-sm"><strong>4.7</strong></span>
+          </div>
+        
+          <div class="d-flex">
+            <br-icon icon-name="fa6-solid:star" size="lg" class="text-warning"></br-icon>
+            <br-icon icon-name="fa6-solid:star" size="lg" class="text-warning"></br-icon>
+            <br-icon icon-name="fa6-solid:star" size="lg" class="text-warning"></br-icon>
+            <br-icon icon-name="fa6-solid:star" size="lg" class="text-warning"></br-icon>
+            <br-icon icon-name="fa6-solid:star-half-stroke" size="lg" class="text-warning"></br-icon>
+          </div>
+        
+          <div class="col-auto">
+            <span class="total text-muted fs-sm">(112 avaliações)</span>
+          </div>
+        </div>
       </div>
+      
 
       <div class="col-sm-4 col-lg-4 d-flex justify-content-end">
         <div class="br-magic-button large">
@@ -31,16 +49,15 @@
       <br-list>
         <br-collapse icon-position="left">
           <h5 slot="trigger">O que é?</h5>
-          <br-item>
-            <br-icon slot="start" icon-name="fa6-solid:heart-pulse" />
-            Sub-item
-            <span slot="end">META</span>
-          </br-item>
-          <br-item>
-            <br-icon slot="start" icon-name="fa6-solid:heart-pulse" />
-            Sub-item
-            <span slot="end">META</span>
-          </br-item>
+          <p class="ml-6">
+            Todas as crianças que realizaram inscrição para educação infantil, participaram do sorteio e não foram sorteadas, automaticamente são incluídas na lista de espera por novas vagas. Estas vagas podem ou não surgir consequentes a desistências.
+            <br>
+            <br>
+            As crianças da fila de espera são chamadas de acordo com a ordem de inscrição. As famílias podem desistir da vaga ao serem chamadas, afinal, podem ter realizado atendimento em outra instituição. É comum surgirem vagas que atendam parte das crianças da lista, mas não é comum atendermos a toda a demanda.
+            <br>
+            <br>
+            Se você não participou da matrícula/sorteio e deseja pleitear uma vaga fora de época, inscreva-se na fila de espera que está aberta durante o ano inteiro, na recepção da instituição. A cada novo edital de matrículas publicado, toda a lista de espera é descartada e reiniciada após o último sorteio.
+          </p>
         </br-collapse>
 
         <br-collapse icon-position="left">
@@ -62,6 +79,7 @@
   </div>
 
   <div *ngIf="isInscricaoAtiva">
+    
     <app-step [steps]="steps" [selectedIndex]="selectedStep" (stepChange)="onStepChange($event)"></app-step>
 
     <div style="margin-top: 20px;">
@@ -74,7 +92,9 @@
       <p *ngIf="selectedStep === 2" id="2">
         <app-app-inscricao-lista-espera-escolas/>
       </p>
-      <p *ngIf="selectedStep === 3" id="3">{{ selectedStep}}</p>
+      <p *ngIf="selectedStep === 3" id="3">
+        <app-app-inscricao-lista-espera-formulario/>
+      </p>
       <p *ngIf="selectedStep === 4" id="4">{{ selectedStep}}</p>
     </div>
 

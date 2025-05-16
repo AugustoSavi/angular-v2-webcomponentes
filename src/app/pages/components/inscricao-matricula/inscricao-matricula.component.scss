@@ -13,3 +13,13 @@
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
+
+.titulo {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #0c326f;
+  line-height: 40px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
