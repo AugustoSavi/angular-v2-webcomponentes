@@ -26,9 +26,180 @@
       </div>
     </div>
 
+    <style>
+      .vw-text--hover {
+        text-decoration: underline !important;
+        opacity: 1 !important;
+        cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAbPSURBVHgBzVpNbBNHFH4za4iRQKQXoIdSV2q4RUqrRhgJqBFIVcmhgApIXEjSExJt2hsioDoCQ2+B/ohTSbggQUuVHiiqREWaIDUIRILoiVTCzSXAKTRIsZPsTOfb9Rp7PbPejZefT/Lf7O7sfPPe++bNW7NMVjbPLSseZEK+Qdx6mwxgQjyVJGecH5zyTPAZSWKGbMqPZVfk6RWCpU/MZYnzr6lBMGITkmhGkb2nfg0vcpa/3bt8gl4CEhQTlJXanE/OMuqjx1ItG3PFGZecGFKWvjd2fMUwvQAk1BSm6AWBETUrWhlFJEOcUTpXzMNKJOwLcRJi6ZNzg8T4QXr5yDuEFuy+RmOK06tDSlmpk5bxh+nc/EA6O5eiJeJVkqhAY2ReExIeSmROLURSy9eMRAlSZJUIPAxrldgkthIrm4i2bGC0YS1T3xm9udptf1Ygmv5P0rRaJseniCafyKBuUsoqN9pz87vrrTexktjSwmh/O6f31rOAs54fm34KMpJ+vCno0VPtySm13oynTy12jh1NXDD2GIfEYtC9HVzNOKOl4rf7IoiMGqllJMLVwpqnJQJuc3oPp+8PWA0RAHa2uv3ADbWQ9qBKkTK6Q1yyUlIXEeuUnw92W7R1Q3zagIn4Zo9Fn2029Mm5VoI5YywyCRCIY/ZN6FYkDERUsFsD/kYuVEpNERCVAIL35FXb8XkdZgvSOccPENn/gY6IzGw6UdxV2cJ5QkRKlzFD9QhgUBg0JBWva/cl5a66gVuJkQeC9p6zqfO8re0HRNatrm2XnPorf/NCMRnaEjtbmROA9XD5tjvozoFFWplUefl295rzisSn5xbLM3/5jqTZoiKqXnenaq2Ba491WLpbpNKn5suKyieybAabGQqB7s3hgnhfO3NmcFrJJWYZw/v5kFVu+/yiXbaUh9EH+oUP8q1ddyR1el956S1PdQArhIkD15WkEzfwaczyt38IZR1BPxxIOP2ACCxVuWKPTwljn/oglxlPqZyjUmJLGYyPW8NZAa4Et8Fs7213F0GsJ3CdwxcX6d01+omYfELaAAdM1pAJtus5CZKBwQ03eH99ODWCK7WogXrDQQxhPfFcCVYxYeSBOZfS3Z8x/gk+HRJMskASLWvCrwdwOQx6sMsNyMMXXeW5cihhkMznGJ00k9BaorSvd3ot2MlgEmvDkzh7XdCRKzatSjLH75HgeYH8xQ5edi8dJh/LqmCvGoNmIrGHR1w4JKBQqsFIpGUNhcYqJYuPfL7tBTLWiUr38gMiMFvUWwNyqxMWe5nVXLavEPJPMmBlMrwlIMOD3W6G71cVb50AdO4FYlFTGUvYzeX9hArFIfXeQ0sAXOaqIa2A62CGPXjrBMjCvYBLd9xrvUXRBE8cqiApVSaBuGji8zNuragazwowsXmGsAaMTAbu0qrgudes8n8QwQTsU5upehmxdq/BVEm18reqNtzAIuI/D8EYlG5A33U3wEBN2g/ASr9/lXCCPkw681H/YpVVHQixzbc9tdXOiWf8F08+Vm+tVAMkcFidazouIYgA4F0XhgD60t5HFbSrSBQWkkNNy+b7/S7lpgS1N4Kuj0Zwo0bwz+PaNuR8t1T1sIoEpHbjicIFtVWqCnCkBNBvyFwlerZbahbNJOq5UxSMTNYKB5NuplFT7TCpFBTEL5kghU0N8iId4iKACdSmJNJdFmp8xK1Wq0KvD9cMEgp3gsTqXnEBVtDFg82tIXzq607C7lN7vkxlE2TxkpJS1JUq0dthdqk43AmWPn9TO4HlhzhaErCGktthv9yisw6lJP7YQHJ2Wbmb3+T1CKDYVg8/3ZG1CxzAWNb7atY2bnf5d3ww6ZFf9Pvh8X+juROI9+wIlta7peqgBvmxo8vLhbTAqTA9zzOVVKK4TphiA9ITgxU6Q5MANuWK42pobf72gNpQwwgkACv0Nr1T2VB3FJKL3bpCAuLj7HWb4sbdKTMBZxwLYpu/PVTe69RAOb+hO4ay/XcxVANdFZKOQJjABO3+63jTUE07hUQ6N9epDDdgOo4qRvfm6JVxDP7a34rAqHBqUEYI0adUM6s7FOmOm04WvpSM9QedA9XZqirbbW+5D1l0wMDxkAU5GaqDgYMHAggAkX2g5FqwSCrM+bCMtxVFuo69Sd1Bl4AY4IK6dC5UiSU5cvq0KloJVKdr9x6xQcphWpRdYZ5xNxSNpTjBOpKimOAokJR9t44lz4S9JpYHDHGQYZImVCXy16SdPDOcjfbMJNanJO25Z22WsHap52sfqlFlgs51/pGD/YCbTg838l+PF/Oop4QSqWZBvJlz4e4WhSpex/wfqf8BK1ZQuMrKBT4AAAAASUVORK5CYII=') , pointer !important;
+      }
+    </style>
+
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
     <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
+      const isntInIframe = window.self == window.top;
+      if (isntInIframe) {
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      } else {
+          const $root_filho_iframe = Array.from([document.body, ...document.body.children]);
+
+          const hasTag = (el, tags) => tags.includes(el.tagName);
+          const isLinkOrButton = el => hasTag(el, ["A", "BUTTON"]);
+          const isSubmitInput = el => hasTag(el, ["INPUT"]) && el.type === 'submit';
+          const isValidImage = el => hasTag(el, ["IMG"]) && el.alt && el.alt.trim();
+          const isSelect = el => hasTag(el, ["SELECT"]);
+          const isSVG = el => hasTag(el, ['SVG', 'PATH']);
+
+          function hasLinkAncestor(el) {
+            while (el) {
+              if ($root_filho_iframe.includes(el)) break;
+              if (isLinkOrButton(el) || (el.onclick && !isSVG(el))) return el;
+              el = el.parentNode;
+            }
+            return null;
+          }
+
+          function isValidElement(element) {
+            return hasTextContent(element)
+              || hasLinkAncestor(element)
+              || isSubmitInput(element)
+              || isValidImage(element)
+              || isSelect(element);
+          }
+
+          function hasTextContent(el) {
+            const check = (item) => item.nodeType === Node.TEXT_NODE && item.textContent.trim();
+            return Array.from(el.childNodes).some(e => check(e));
+          }
+
+          function highlightElement({ target: element }) {
+            if (isValidElement(element)) element.classList.add('vw-text--hover');
+          }
+
+          function removeHighlight({ target: element }) {
+            element.classList.remove('vw-text--hover');
+          }
+
+          function translateContent(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const element = event.target;
+            if (!isValidElement(element)) return;
+
+            const getTextContent = () => {
+              try {
+                if (hasTag(element, ['IMG'])) return element.alt;
+                else if (isSubmitInput(element)) return element.value;
+                else if (hasTag(element, ['SELECT'])) {
+                  const option = element.querySelector(`option[value="${element.value}"]`);
+                  return option ? option.innerText : '';
+                }
+                else if (element.innerText) return element.innerText.replace(/\s+/g, ' ');
+                else return element.textContent;
+              } catch {
+                return '';
+              }
+            };
+
+            const textContent = getTextContent();
+
+            // Aqui você pode substituir essa linha para fazer algo com o texto, ex:
+            // console.log('Texto para traduzir:', textContent);
+            // Ou chamar seu plugin customizado, se existir:
+            if (textContent && textContent.trim()) {
+              // post message to parent window
+              if (!isntInIframe) {
+                window.parent.postMessage({ type: 'translate', text: textContent }, '*');
+              } else {
+                // Se não estiver em iframe, apenas chama a função
+                console.log('Texto para traduzir:', textContent);
+              }
+            }
+          }
+
+          function removeTooltips() {
+            const tooltip = document.querySelector('.vw-links');
+            if (tooltip) tooltip.style.display = 'none';
+          }
+
+          // Ativa o sistema
+          function activate() {
+            document.addEventListener("mouseover", highlightElement);
+            document.addEventListener("mouseout", removeHighlight);
+            document.addEventListener("scroll", removeTooltips);
+            document.addEventListener("click", translateContent, true);
+          }
+
+          function deactivate() {
+            removeTooltips();
+            document.removeEventListener("mouseover", highlightElement);
+            document.removeEventListener("mouseout", removeHighlight);
+            document.removeEventListener("scroll", removeTooltips);
+            document.removeEventListener("click", translateContent, true);
+          }
+
+          // Cria tooltip só para visualização (opcional, pode remover se não quiser)
+          if (!document.querySelector('.vw-links')) {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'vw-links';
+            document.body.appendChild(tooltip);
+          }
+
+          window.addEventListener('message', (event) => {
+              const data = event.data;
+              if (data && data.type === 'vlibrasStatus') {
+                console.log('FILHO: VLibras está aberto:', data.status);
+                if (data.status) {
+
+                  activate();
+                } else {
+                  // verifica se função deactivate() existe
+                  if (typeof deactivate === 'function') {
+                    deactivate();
+                  } else {
+                    console.log('Função deactivate não encontrada');
+                  }
+                }
+              }
+          });
+
+      }
+
+      function observaMudancasClasses(){
+        const button = document.querySelector('[vw-access-button]');
+        if (!button) {
+          console.log('Elemento vw-access-button não encontrado');
+        } else {
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              if (mutation.attributeName === 'class') {
+                const vlibrasEstaAberto = !button.classList.contains('active');
+                // post message to iframe window
+                document.querySelectorAll('iframe').forEach((iframe) => {
+                  iframe.contentWindow.postMessage({ type: 'vlibrasStatus', status: vlibrasEstaAberto }, '*');
+                });
+                
+              }
+            });
+          });
+
+          observer.observe(button, { attributes: true }); // Observar mudanças em atributos (como class)
+        }
+      }
+
+      observaMudancasClasses();
+
+      window.addEventListener('message', (event) => {
+        const data = event.data;
+
+        if (data && data.type === 'translate') {
+          console.log('Texto para traduzir recebido:', data.text);
+          window.plugin.player.translate(data.text);
+        }
+    });
+
     </script>
-  <link rel="modulepreload" href="chunk-WNPZZUN6.js"><link rel="modulepreload" href="chunk-NQRVU3O4.js"><link rel="modulepreload" href="chunk-GWUSNBPA.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-6T3SRK6K.js" defer></script><script src="main-F3QC5JRO.js" type="module"></script></body>
+      
+  <link rel="modulepreload" href="chunk-WNPZZUN6.js"><link rel="modulepreload" href="chunk-NQRVU3O4.js"><link rel="modulepreload" href="chunk-GWUSNBPA.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-6T3SRK6K.js" defer></script><script src="main-WV72RJ3M.js" type="module"></script></body>
 </html>
